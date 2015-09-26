@@ -14,6 +14,10 @@ class Head
 	}
 
 	function add(Style $style){
+
+	}
+
+	function showALl(){
 		
 	}
 }

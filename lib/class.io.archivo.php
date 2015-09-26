@@ -1,12 +1,12 @@
 <?php 
 
-class File
+class Archivo
 {
 	private $src = '';
 	private $dato = '';
 
 	function __construct(){
-
+		setSrc('');
 	}
 
 	function __construct($ruta){
