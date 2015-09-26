@@ -6,6 +6,7 @@ class Web
 	private $id = '';
 	private $name = '';
 	private $charset = '';
+	private $contenido = '';
 
 	function setId($newId){
 		$this->id = $newId;
@@ -30,6 +31,15 @@ class Web
 
 	function getCharset(){
 		return $this->charset;
+	}
+
+
+	function add(Html $html){
+		$this->contenido = $html->showAll();
+	}
+
+	function showAll(){
+		return $this->contenido;
 	}
 }
 
