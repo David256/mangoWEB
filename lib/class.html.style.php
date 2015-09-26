@@ -7,6 +7,9 @@ class Style
 	private $scoped = '';
 	private $type = '';
 	private $src = '';
+	private $contenido = '';
+
+	$file = new File();
 
 	function setMedia($newMedia){
 		$this->media = $newMedia;
@@ -45,10 +48,13 @@ class Style
 
 	function loadFile($rutaString){
 		setSrc($rutaString);
+		$file = new File($rutaString);
+		$this->contenido = $file->showAll();
 	}
 
 	function loadFile(File $file){
 		setSrc($file->getSrc());
+		$this->contenido = $file->showAll();
 	}
 }
 
