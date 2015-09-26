@@ -35,7 +35,7 @@ class Web
 
 
 	function add(Html $html){
-		$this->contenido = $html->showAll();
+		$this->contenido = $this->contenido . $html->showAll();
 	}
 
 	function showAll(){

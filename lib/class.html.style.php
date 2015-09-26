@@ -1,6 +1,6 @@
 <?php 
 
-require('./class.io.file.php');
+require('class.io.archivo.php');
 
 class Style
 {
@@ -10,7 +10,7 @@ class Style
 	private $src = '';
 	private $contenido = '';
 
-	$file = new Archivo();
+//	$archivo = new Archivo();
 
 	function __construct(){
 
@@ -29,7 +29,7 @@ class Style
 	}
 
 
-	private function setSrc($newSrc){
+	function setSrc($newSrc){
 		$this->src = $newSrc;
 	}
 
@@ -51,19 +51,20 @@ class Style
 	}
 
 
-	function loadFile($rutaString){
-		setSrc($rutaString);
-		$file = new Archivo($rutaString);
-		$this->contenido = $file->showAll();
+	function cargar($rutaString){
+		//setSrc($rutaString);
+		$this->src = $rutaString;
+		$archivo = new Archivo($rutaString);
+		$this->contenido = $archivo->showAll();
 	}
-
-	function loadFile(Archivo $file){
-		setSrc($file->getSrc());
-		$this->contenido = $file->showAll();
+/*
+	function cargar($archivo){
+		setSrc($archivo->getSrc());
+		$this->contenido = $archivo->showAll();
 	}
-
+*/
 	function showAll(){
-		return "<style type='getType()' media='getMedia()' scoped='getScoped()' >"."\r\n".$this->contenido."\r\n"."</style>";
+		return "<style type='$this->type' media='$this->media' scoped='$this->scoped' >"."\r\n".$this->contenido."\r\n"."</style>";
 	}
 }
 

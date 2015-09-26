@@ -14,8 +14,12 @@ class Html extends Web
 		return $this->lang;
 	}
 
+	function add($html){
+		$this->contenido = $this->contenido . $html->showAll();
+	}
+
 	function showAll(){
-		return $this->contenido;
+		return "<html lang='$this->lang'>"."\r\n".$this->contenido."</html>";
 	}
 }
 

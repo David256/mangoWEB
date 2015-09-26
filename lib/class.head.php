@@ -5,20 +5,11 @@ class Head
 {
 	private $contenido = '';
 
-	function add(Tag $tag){
-
+	function add($html){
+		$this->contenido = $this->contenido . $html->showAll() . "\r\n";
 	}
-
-	function add(Script $html){
-
-	}
-
-	function add(Style $style){
-
-	}
-
 	function showALl(){
-		
+		return "<head>"."\r\n".$this->contenido."\r\n"."</head>";
 	}
 }
 

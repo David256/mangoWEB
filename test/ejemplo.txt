@@ -1,0 +1,99 @@
+// para saber si la clase viende de html if($Object instanceof Html)
+<?php
+	class Test
+	{
+		public function Add($Object)
+		{
+			$AllowedClasses = array('html', 'script', 'tag');
+
+			$Class = get_class($Object);
+
+			if(in_array(strtolower($Class), $AllowedClasses))
+			{
+				switch($Class)
+				{
+					case 'html':
+						// Code
+						break;
+					case 'html':
+						// Code
+						break;
+					case 'html':
+						// Code
+						break;
+				}
+			}
+
+			trigger_error('Tenes que pasarle un objeto script, html o lo que sea a la funcion', E_USER_ERROR);
+
+			return false;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//mas dificil
+
+
+
+
+
+
+
+
+
+
+<?php
+	class Test
+	{
+		public function Add($Object)
+		{
+			$AllowedClasses = array('html', 'script', 'tag');
+
+			$Class = get_class($Object);
+
+			if(in_array(strtolower($Class), $AllowedClasses))
+			{
+				$Arguments = func_get_args();
+
+				return call_user_func_array(array($this, 'Add' . $Class), $Arguments);
+			}
+
+			trigger_error('Lo que sea', E_USER_ERROR);
+
+			return false;
+		}
+
+		private function AddHtml(Html $Html)
+		{
+
+		}
+
+		private function AddScript(Script $Script)
+		{
+
+		}
+
+		private function AddTag(Tag $Tag)
+		{
+
+		}
+	}
+	
