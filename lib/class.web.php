@@ -8,28 +8,28 @@ class Web
 	private $charset = '';
 
 	function setId($newId){
-		$id = $newId;
+		$this->id = $newId;
 	}
 
 	function setName($newName){
-		$name = $newName;
+		$this->name = $newName;
 	}
 
 	function setCharset($newChar){
-		$charset = $newChar;
+		$this->charset = $newChar;
 	}
 
 
 	function getId(){
-		return $id;
+		return $this->id;
 	}
 
 	function getName(){
-		return $name;
+		return $this->name;
 	}
 
 	function getCharset(){
-		return $charset;
+		return $this->charset;
 	}
 }
 
