@@ -1,9 +1,7 @@
 <?php 
 
 
-
-
-class Html
+class Html extends Web
 {
 	private $lang = '';
 
