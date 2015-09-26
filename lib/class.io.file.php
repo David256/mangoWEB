@@ -3,6 +3,7 @@
 class File
 {
 	private $src = '';
+	private $dato = '';
 
 	function __construct(){
 
@@ -21,6 +22,12 @@ class File
 
 	function getSrc(){
 		return $this->src;
+	}
+
+	function showAll(){
+		$hdFile = fopen(getSrc(), 'r');
+		$contenido = fread($hdFile, filesize(getSrc()));
+		return $contenido;
 	}
 }
 
