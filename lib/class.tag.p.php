@@ -1,1 +1,7 @@
-s
+<?php 
+
+class Parrafo extends tag{
+	
+}
+
+ ?>
