@@ -5,7 +5,7 @@ class File
 	private $src = '';
 
 	function __construct(){
-		
+
 	}
 
 	function __construct($ruta){
@@ -14,6 +14,9 @@ class File
 
 	function setSrc($newSrc){
 		$this->src = $newSrc;
+		if(!file_exists(getSrc())){
+			throw new Exception('Archivo '.getSrc().' no es accesible');
+		}
 	}
 
 	function getSrc(){
