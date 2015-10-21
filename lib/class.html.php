@@ -6,6 +6,10 @@ class Html extends Web
 	private $lang = '';
 	private $contenido = '';
 
+	function __construct($idioma='es'){
+		$this->lang = $idioma; //valor por defecto pues
+	}
+
 	function setLang($newLang){
 		$this->lang = $newLang;
 	}
@@ -19,7 +23,7 @@ class Html extends Web
 	}
 
 	function showAll(){
-		return "<html lang='$this->lang'>"."\r\n".$this->contenido."</html>";
+		return "<!DOCTYPE html><html lang='$this->lang'>"."\r\n".$this->contenido."</html>";
 	}
 }
 
