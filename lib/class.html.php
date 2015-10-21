@@ -23,7 +23,7 @@ class Html extends Web
 	}
 
 	function showAll(){
-		return "<!DOCTYPE html><html lang='$this->lang'>"."\r\n".$this->contenido."</html>";
+		return "<!DOCTYPE html>\r\n<html lang='$this->lang'>"."\r\n".$this->contenido."</html>";
 	}
 }
 
