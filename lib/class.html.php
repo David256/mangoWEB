@@ -18,6 +18,10 @@ class Html extends Web
 		return $this->lang;
 	}
 
+	function getId(){
+		return $this->id;
+	}
+
 	function add($html){
 		$this->contenido = $this->contenido . $html->showAll();
 	}
